@@ -13,7 +13,7 @@ npm install --save convert-vinyl-to-vfile
 ## Usage
 ### ES2015
 ```javascript
-import converVinylToVfile from 'convert-vinyl-to-vfile';
+import convertVinylToVfile from 'convert-vinyl-to-vfile';
 import {join} from 'path';
 import VFile from 'vfile';
 import Vinyl from 'vinyl';
@@ -41,7 +41,7 @@ vfile insanceof VFile;
 
 ### ES5
 ```javascript
-var converVinylToVfile = require('convert-vinyl-to-vfile')
+var convertVinylToVfile = require('convert-vinyl-to-vfile')
   , join = require('path').join
   , VFile = require('vfile')
   , Vinyl = require('vinyl')

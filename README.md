@@ -3,7 +3,7 @@
 
 [![Code Climate](https://codeclimate.com/github/dustinspecker/convert-vinyl-to-vfile/badges/gpa.svg)](https://codeclimate.com/github/dustinspecker/convert-vinyl-to-vfile) [![Dependencies](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile.svg)](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile/#info=dependencies&view=table) [![DevDependencies](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile/dev-status.svg)](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile/#info=devDependencies&view=table)
 
-> Convert a Vinyl file to a VFile
+> Convert a [Vinyl](https://github.com/wearefractal/vinyl) file to a [VFile](https://github.com/wooorm/vfile)
 
 ## Install
 ```

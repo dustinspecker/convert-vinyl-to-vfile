@@ -8,7 +8,10 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": "dustinspecker/convert-vinyl-to-vfile",
-  "keywords": [],
+  "keywords": [
+    "vfile",
+    "vinyl"
+  ],
   "author": {
     "name": "Dustin Specker",
     "email": "DustinSpecker@DustinSpecker.com",

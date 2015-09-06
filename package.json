@@ -15,6 +15,9 @@
     "url": "https://github.com/dustinspecker"
   },
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "vfile": "^1.1.0",
     "vinyl": "^0.5.3"

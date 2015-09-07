@@ -10,16 +10,23 @@ import Vinyl from 'vinyl';
  * @return {VFile} - VFile version of vinyl
  */
 export default function convertVinylToVfile(vinyl) {
-  let contents, directory, extension, filename;
+  let contents, directory, extension, filename, newVinyl;
 
-  if (!Vinyl.isVinyl(vinyl)) {
+  // When a "Vinyl file" is passed from a Gulp stream
+  // Vinyl.isVinyl(vinyl) returns false.
+  // This forces a potential Vinyl file to be a Vinyl file.
+  if (vinyl) {
+    newVinyl = new Vinyl(vinyl);
+  }
+
+  if (!Vinyl.isVinyl(newVinyl)) {
     throw new TypeError('Expected a Vinyl file');
   }
 
-  contents = vinyl.contents.toString();
-  directory = path.dirname(vinyl.path);
-  extension = path.extname(vinyl.path).replace('.', '');
-  filename = path.basename(vinyl.path, `.${extension}`);
+  contents = newVinyl.contents.toString();
+  directory = path.dirname(newVinyl.path);
+  extension = path.extname(newVinyl.path).replace('.', '');
+  filename = path.basename(newVinyl.path, `.${extension}`);
 
   return new VFile({
     directory,

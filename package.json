@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "vfile": "^1.1.0",
-    "vinyl": "^0.5.3"
+    "vinyl": "^1.1.0"
   },
   "devDependencies": {
     "babel-core": "^5.8.23",
@@ -37,7 +37,7 @@
     "gulp-babel": "^5.1.0",
     "gulp-eslint": "^1.0.0",
     "gulp-istanbul": "^0.10.0",
-    "gulp-jscs": "^2.0.0",
+    "gulp-jscs": "^3.0.1",
     "gulp-jshint": "^1.11.0",
     "gulp-mocha": "^2.1.0"
   }

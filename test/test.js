@@ -3,7 +3,6 @@
 import convertVinylToVfile from '../lib/';
 import {expect} from 'chai';
 import {join} from 'path';
-import VFile from 'vfile';
 import Vinyl from 'vinyl';
 
 describe('conver-vinyl-to-vfile', () => {
@@ -34,10 +33,6 @@ describe('conver-vinyl-to-vfile', () => {
 
     beforeEach(() => {
       result = convertVinylToVfile(vinylFile);
-    });
-
-    it('should be a VFile', () => {
-      expect(result instanceof VFile).to.eql(true);
     });
 
     it('should have a directory property', () => {

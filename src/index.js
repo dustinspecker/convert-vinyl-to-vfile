@@ -9,7 +9,7 @@ import Vinyl from 'vinyl';
  * @throws {TypeError} - if vinyl is not a Vinyl file
  * @return {VFile} - VFile version of vinyl
  */
-export default function convertVinylToVfile(vinyl) {
+module.exports = function (vinyl) {
   let contents, directory, extension, filename, newVinyl;
 
   // When a "Vinyl file" is passed from a Gulp stream
@@ -34,4 +34,4 @@ export default function convertVinylToVfile(vinyl) {
     extension,
     contents
   });
-}
+};

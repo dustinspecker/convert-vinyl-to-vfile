@@ -3,20 +3,16 @@
 import convertVinylToVfile from '../lib/'
 import {expect} from 'chai'
 import {join} from 'path'
+import {Stream} from 'stream'
 import Vinyl from 'vinyl'
 
-describe('conver-vinyl-to-vfile', () => {
-  let directory, extension, filename, vinylFile
+describe('convert-vinyl-to-vfile', () => {
+  let vinylFile
 
   beforeEach(() => {
-    const contents = 'abe lincoln'
-    directory = join('users', 'dustin', 'project')
-    extension = 'md'
-    filename = 'awesome.project'
-
     vinylFile = new Vinyl({
-      contents: new Buffer(contents),
-      path: join(directory, `${filename}.${extension}`)
+      contents: new Buffer('abe lincoln'),
+      path: join('users', 'dustin', 'project', 'awesome.project.md')
     })
   })
 
@@ -26,6 +22,16 @@ describe('conver-vinyl-to-vfile', () => {
     expect(test).to.throw(TypeError, /Expected a Vinyl file/)
   })
 
+  it('should throw error if vinyl is a stream', () => {
+    const file = new Vinyl({
+      contents: new Stream(),
+      path: 'awesome.project.md'
+    })
+    const test = () => convertVinylToVfile(file)
+
+    expect(test).to.throw(TypeError, /Streams are not supported/)
+  })
+
   describe('output', () => {
     let result
 
@@ -33,20 +39,20 @@ describe('conver-vinyl-to-vfile', () => {
       result = convertVinylToVfile(vinylFile)
     })
 
-    it('should have a directory property', () => {
-      expect(result.directory).to.eql(directory)
+    it('should have a dirname property', () => {
+      expect(result.dirname).to.eql(vinylFile.dirname)
     })
 
-    it('should have a filename property', () => {
-      expect(result.filename).to.eql(filename)
+    it('should have a stem property', () => {
+      expect(result.stem).to.eql(vinylFile.stem)
     })
 
-    it('should have an extension property', () => {
-      expect(result.extension).to.eql(extension)
+    it('should have an extname property', () => {
+      expect(result.extname).to.eql(vinylFile.extname)
     })
 
-    it('should have a contents property', () => {
-      expect(result.contents).to.eql('abe lincoln')
+    it('should have contents', () => {
+      expect(result.toString()).to.eql(vinylFile.contents.toString())
     })
   })
 })

@@ -1,5 +1,4 @@
 'use strict'
-import path from 'path'
 import VFile from 'vfile'
 import Vinyl from 'vinyl'
 
@@ -23,15 +22,15 @@ module.exports = function (vinyl) {
     throw new TypeError('Expected a Vinyl file')
   }
 
-  const contents = newVinyl.contents.toString()
-  const directory = path.dirname(newVinyl.path)
-  const extension = path.extname(newVinyl.path).replace('.', '')
-  const filename = path.basename(newVinyl.path, `.${extension}`)
+  if (newVinyl.isStream()) {
+    throw new TypeError('Streams are not supported')
+  }
+
+  const contents = newVinyl.contents
+  const path = newVinyl.path
 
   return new VFile({
-    directory,
-    filename,
-    extension,
+    path,
     contents
   })
 }

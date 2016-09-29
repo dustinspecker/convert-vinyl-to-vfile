@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "vfile": "^2.0.0",
-    "vinyl": "^1.1.0"
+    "vinyl": "^2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.12",

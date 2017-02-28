@@ -24,7 +24,7 @@ describe('convert-vinyl-to-vfile', () => {
 
   it('should throw error if vinyl is a stream', () => {
     const file = new Vinyl({
-      contents: new Stream(),
+      contents: new Stream.Readable(),
       path: 'awesome.project.md'
     })
     const test = () => convertVinylToVfile(file)

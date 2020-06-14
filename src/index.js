@@ -31,6 +31,7 @@ module.exports = function (vinyl) {
 
   return new VFile({
     path,
-    contents
+    contents,
+    data: newVinyl.data
   })
 }

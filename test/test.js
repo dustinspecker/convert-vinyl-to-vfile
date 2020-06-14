@@ -12,7 +12,8 @@ describe('convert-vinyl-to-vfile', () => {
   beforeEach(() => {
     vinylFile = new Vinyl({
       contents: new Buffer('abe lincoln'),
-      path: join('users', 'dustin', 'project', 'awesome.project.md')
+      path: join('users', 'dustin', 'project', 'awesome.project.md'),
+      data: {custom: 'data'}
     })
   })
 
@@ -53,6 +54,10 @@ describe('convert-vinyl-to-vfile', () => {
 
     it('should have contents', () => {
       expect(result.toString()).to.eql(vinylFile.contents.toString())
+    })
+
+    it('should have custom data', () => {
+      expect(result.data).to.eql(vinylFile.data)
     })
   })
 })

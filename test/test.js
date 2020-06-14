@@ -5,6 +5,7 @@ import {expect} from 'chai'
 import {join} from 'path'
 import {Stream} from 'stream'
 import Vinyl from 'vinyl'
+import VFile from 'vfile'
 
 describe('convert-vinyl-to-vfile', () => {
   let vinylFile
@@ -58,6 +59,13 @@ describe('convert-vinyl-to-vfile', () => {
 
     it('should have custom data', () => {
       expect(result.data).to.eql(vinylFile.data)
+    })
+
+    it('should have default data if not defined', () => {
+      const plainVinyl = new Vinyl({path: 'plain.txt'})
+      const plainVfile = new VFile({path: 'plain.txt'})
+      const defaultData = plainVfile.data
+      expect(convertVinylToVfile(plainVinyl).data).to.deep.eql(defaultData)
     })
   })
 })

@@ -26,12 +26,14 @@ module.exports = function (vinyl) {
     throw new TypeError('Streams are not supported')
   }
 
-  const contents = newVinyl.contents
-  const path = newVinyl.path
+  const options = {}
 
-  return new VFile({
-    path,
-    contents,
-    data: newVinyl.data
-  })
+  options.contents = newVinyl.contents
+  options.path = newVinyl.path
+
+  if (typeof newVinyl.data !== 'undefined') {
+    options.data = newVinyl.data
+  }
+
+  return new VFile(options)
 }

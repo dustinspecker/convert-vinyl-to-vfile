@@ -19,11 +19,9 @@ gulp.task('lint', ['clean'], () => gulp.src([configFiles, srcFiles, testFiles])
   .pipe(eslint())
   .pipe(eslint.failOnError()))
 
-gulp.task('compile', ['lint'], () => gulp.src(srcFiles)
+gulp.task('build', ['lint'], () => gulp.src(srcFiles)
   .pipe(babel())
   .pipe(gulp.dest(destDir)))
-
-gulp.task('build', ['compile'])
 
 gulp.task('test', ['build'], cb => {
   gulp.src([`${destDir}*.js`])

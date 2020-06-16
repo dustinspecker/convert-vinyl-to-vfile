@@ -23,7 +23,7 @@
     "lib"
   ],
   "dependencies": {
-    "vfile": "^2.0.0",
+    "vfile": "^4.1.1",
     "vinyl": "^2.0.0"
   },
   "devDependencies": {

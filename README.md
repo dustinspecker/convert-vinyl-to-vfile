@@ -11,46 +11,18 @@ npm install --save convert-vinyl-to-vfile
 ```
 
 ## Usage
-### ES2015
 ```javascript
-import convertVinylToVfile from 'convert-vinyl-to-vfile';
-import {join} from 'path';
-import VFile from 'vfile';
-import Vinyl from 'vinyl';
+const convertVinylToVfile = require('convert-vinyl-to-vfile')
+const {join} = require('path');
+const VFile = require('vfile');
+const Vinyl = require('vinyl');
 
-let vfile, vinylFile;
-
-vinylFile = new Vinyl({
-  contents: new Buffer('abe lincoln'),
+const vinylFile = new Vinyl({
+  contents: Buffer.from('abe lincoln'),
   path: join('users', 'dustin', 'project', 'awesome.project.md')
 });
 
-vfile = convertVinylToVfile(vinylFile);
-/* =>
- * new VFile({
- *   contents: <Buffer 61 62 65 20 6c 69 6e 63 6f 6c 6e>,
- *   path: 'users/dustin/project/awesome.project.md'
- * })
- */
-
-vfile instanceof VFile;
-// => true
-```
-
-### ES5
-```javascript
-var convertVinylToVfile = require('convert-vinyl-to-vfile')
-  , join = require('path').join
-  , VFile = require('vfile')
-  , Vinyl = require('vinyl')
-  , vfile, vinylFile;
-
-vinylFile = new Vinyl({
-  contents: new Buffer('abe lincoln'),
-  path: join('users', 'dustin', 'project', 'awesome.project.md')
-});
-
-vfile = convertVinylToVfile(vinylFile);
+const vfile = convertVinylToVfile(vinylFile);
 /* =>
  * new VFile({
  *   contents: <Buffer 61 62 65 20 6c 69 6e 63 6f 6c 6e>,

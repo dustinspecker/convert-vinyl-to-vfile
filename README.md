@@ -1,7 +1,7 @@
 # convert-vinyl-to-vfile
 [![NPM version](https://badge.fury.io/js/convert-vinyl-to-vfile.svg)](https://badge.fury.io/js/convert-vinyl-to-vfile) [![Build Status](https://travis-ci.org/dustinspecker/convert-vinyl-to-vfile.svg)](https://travis-ci.org/dustinspecker/convert-vinyl-to-vfile) [![Coverage Status](https://img.shields.io/coveralls/dustinspecker/convert-vinyl-to-vfile.svg)](https://coveralls.io/r/dustinspecker/convert-vinyl-to-vfile?branch=master)
 
-[![Code Climate](https://codeclimate.com/github/dustinspecker/convert-vinyl-to-vfile/badges/gpa.svg)](https://codeclimate.com/github/dustinspecker/convert-vinyl-to-vfile) [![Dependencies](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile.svg)](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile/#info=dependencies&view=table) [![DevDependencies](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile/dev-status.svg)](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile/#info=devDependencies&view=table)
+[![Code Climate](https://codeclimate.com/github/dustinspecker/convert-vinyl-to-vfile/badges/gpa.svg)](https://codeclimate.com/github/dustinspecker/convert-vinyl-to-vfile) [![Dependencies](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile.svg)](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile) [![DevDependencies](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile/dev-status.svg)](https://david-dm.org/dustinspecker/convert-vinyl-to-vfile?type=dev)
 
 > Convert a [Vinyl](https://github.com/wearefractal/vinyl) file to a [VFile](https://github.com/vfile/vfile)
 

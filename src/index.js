@@ -1,6 +1,6 @@
 'use strict'
-import VFile from 'vfile'
-import Vinyl from 'vinyl'
+const VFile = require('vfile')
+const Vinyl = require('vinyl')
 
 /**
  * Convert a Vinyl file to a VFile

@@ -1,6 +1,6 @@
 /* global describe, beforeEach, it */
 'use strict'
-const convertVinylToVfile = require('../lib')
+const convertVinylToVfile = require('../src')
 const {expect} = require('chai')
 const {join} = require('path')
 const {Stream} = require('stream')

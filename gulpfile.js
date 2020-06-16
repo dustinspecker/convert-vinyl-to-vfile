@@ -1,7 +1,4 @@
 'use strict'
-const babel = require('gulp-babel')
-const babelCompiler = require('babel-core')
-const del = require('del')
 const gulp = require('gulp')
 const eslint = require('gulp-eslint')
 const istanbul = require('gulp-istanbul')
@@ -11,29 +8,17 @@ const configFiles = './gulpfile.js'
     , srcFiles = 'src/*.js'
     , testFiles = 'test/*.js'
 
-    , destDir = './lib/'
-
-gulp.task('clean', () => del(destDir))
-
-gulp.task('lint', gulp.series(['clean'], () => gulp.src([configFiles, srcFiles, testFiles])
+gulp.task('lint', () => gulp.src([configFiles, srcFiles, testFiles])
   .pipe(eslint())
-  .pipe(eslint.failOnError())))
+  .pipe(eslint.failOnError()))
 
-gulp.task('build', gulp.series(['lint'], () => gulp.src(srcFiles)
-  .pipe(babel())
-  .pipe(gulp.dest(destDir))))
-
-gulp.task('test', gulp.series(['build'], cb => {
-  gulp.src([`${destDir}*.js`])
+gulp.task('test', gulp.series(['lint'], cb => {
+  gulp.src([srcFiles])
     .pipe(istanbul())
     .pipe(istanbul.hookRequire())
     .on('finish', () => {
       gulp.src([testFiles])
-        .pipe(mocha({
-          compilers: {
-            js: babelCompiler
-          }
-        }))
+        .pipe(mocha())
         .pipe(istanbul.writeReports())
         .on('end', cb)
     })

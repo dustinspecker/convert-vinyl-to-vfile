@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "gulp test",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "nyc mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": "dustinspecker/convert-vinyl-to-vfile",
   "keywords": [
@@ -29,11 +29,10 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "coveralls": "^2.11.2",
+    "coveralls": "^3.1.0",
     "eslint": "^7.2.0",
     "eslint-config-dustinspecker": "^5.0.0",
-    "gulp": "^4.0.2",
-    "gulp-istanbul": "^1.0.0",
-    "gulp-mocha": "^3.0.0"
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0"
   }
 }

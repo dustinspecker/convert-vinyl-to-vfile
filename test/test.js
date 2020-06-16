@@ -12,7 +12,7 @@ describe('convert-vinyl-to-vfile', () => {
 
   beforeEach(() => {
     vinylFile = new Vinyl({
-      contents: new Buffer('abe lincoln'),
+      contents: Buffer.from('abe lincoln'),
       path: join('users', 'dustin', 'project', 'awesome.project.md'),
       data: {custom: 'data'}
     })

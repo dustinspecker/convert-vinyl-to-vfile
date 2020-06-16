@@ -1,11 +1,11 @@
 /* global describe, beforeEach, it */
 'use strict'
-import convertVinylToVfile from '../lib'
-import {expect} from 'chai'
-import {join} from 'path'
-import {Stream} from 'stream'
-import Vinyl from 'vinyl'
-import VFile from 'vfile'
+const convertVinylToVfile = require('../lib')
+const {expect} = require('chai')
+const {join} = require('path')
+const {Stream} = require('stream')
+const Vinyl = require('vinyl')
+const VFile = require('vfile')
 
 describe('convert-vinyl-to-vfile', () => {
   let vinylFile

@@ -1,13 +1,13 @@
 'use strict'
-import babel from 'gulp-babel'
-import babelCompiler from 'babel-core'
-import del from 'del'
-import gulp from 'gulp'
-import eslint from 'gulp-eslint'
-import istanbul from 'gulp-istanbul'
-import mocha from 'gulp-mocha'
+const babel = require('gulp-babel')
+const babelCompiler = require('babel-core')
+const del = require('del')
+const gulp = require('gulp')
+const eslint = require('gulp-eslint')
+const istanbul = require('gulp-istanbul')
+const mocha = require('gulp-mocha')
 
-const configFiles = './gulpfile.babel.js'
+const configFiles = './gulpfile.js'
     , srcFiles = 'src/*.js'
     , testFiles = 'test/*.js'
 

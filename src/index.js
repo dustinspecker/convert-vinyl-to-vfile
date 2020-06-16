@@ -11,9 +11,11 @@ import Vinyl from 'vinyl'
 module.exports = function (vinyl) {
   let newVinyl
 
-  // When a "Vinyl file" is passed from a Gulp stream
-  // Vinyl.isVinyl(vinyl) returns false.
-  // This forces a potential Vinyl file to be a Vinyl file.
+  /*
+   * When a "Vinyl file" is passed from a Gulp stream
+   * Vinyl.isVinyl(vinyl) returns false.
+   * This forces a potential Vinyl file to be a Vinyl file.
+   */
   if (vinyl) {
     newVinyl = new Vinyl(vinyl)
   }

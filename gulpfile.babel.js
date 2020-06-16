@@ -15,17 +15,13 @@ const configFiles = './gulpfile.babel.js'
 
 gulp.task('clean', () => del(destDir))
 
-gulp.task('lint', ['clean'], () =>
-  gulp.src([configFiles, srcFiles, testFiles])
-    .pipe(eslint())
-    .pipe(eslint.failOnError())
-)
+gulp.task('lint', ['clean'], () => gulp.src([configFiles, srcFiles, testFiles])
+  .pipe(eslint())
+  .pipe(eslint.failOnError()))
 
-gulp.task('compile', ['lint'], () =>
-  gulp.src(srcFiles)
-    .pipe(babel())
-    .pipe(gulp.dest(destDir))
-)
+gulp.task('compile', ['lint'], () => gulp.src(srcFiles)
+  .pipe(babel())
+  .pipe(gulp.dest(destDir)))
 
 gulp.task('build', ['compile'])
 

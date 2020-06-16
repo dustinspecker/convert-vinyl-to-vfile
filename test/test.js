@@ -1,6 +1,6 @@
 /* global describe, beforeEach, it */
 'use strict'
-import convertVinylToVfile from '../lib/'
+import convertVinylToVfile from '../lib'
 import {expect} from 'chai'
 import {join} from 'path'
 import {Stream} from 'stream'

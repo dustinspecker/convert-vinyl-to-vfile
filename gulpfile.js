@@ -15,15 +15,15 @@ const configFiles = './gulpfile.js'
 
 gulp.task('clean', () => del(destDir))
 
-gulp.task('lint', ['clean'], () => gulp.src([configFiles, srcFiles, testFiles])
+gulp.task('lint', gulp.series(['clean'], () => gulp.src([configFiles, srcFiles, testFiles])
   .pipe(eslint())
-  .pipe(eslint.failOnError()))
+  .pipe(eslint.failOnError())))
 
-gulp.task('build', ['lint'], () => gulp.src(srcFiles)
+gulp.task('build', gulp.series(['lint'], () => gulp.src(srcFiles)
   .pipe(babel())
-  .pipe(gulp.dest(destDir)))
+  .pipe(gulp.dest(destDir))))
 
-gulp.task('test', ['build'], cb => {
+gulp.task('test', gulp.series(['build'], cb => {
   gulp.src([`${destDir}*.js`])
     .pipe(istanbul())
     .pipe(istanbul.hookRequire())
@@ -37,4 +37,4 @@ gulp.task('test', ['build'], cb => {
         .pipe(istanbul.writeReports())
         .on('end', cb)
     })
-})
+}))

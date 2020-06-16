@@ -33,7 +33,7 @@
     "coveralls": "^2.11.2",
     "del": "^5.1.0",
     "eslint-config-dustinspecker": "^5.0.0",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-babel": "^6.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-istanbul": "^1.0.0",
